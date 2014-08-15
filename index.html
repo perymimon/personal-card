@@ -1,0 +1,22 @@
+<!DOCTYPE html  >
+<html lang="en-US" ng-app="MainModule">
+<head>
+    <meta charset="UTF-8"/>
+    <title>personal card</title>
+
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/dat.gui/dat.gui.min.js"></script>
+
+    <link rel="stylesheet"  href="css/app.css">
+
+</head>
+<body ng-controller="mainCtrl">
+    <ng-view></ng-view>
+
+    <script src="js/main.module.js"></script>
+
+    <a ng-href="#front">front</a>
+    <a ng-href="#back">back</a>
+</body>
+</html>
