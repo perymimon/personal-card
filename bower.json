@@ -25,6 +25,6 @@
     "dat.gui": "*",
     "dat-gui":"perymimon/dat.gui",
     "angular-route": "1.2.15",
-    "html2canvas": "~0.4.1"
+    "html2canvas": "perymimon/html2canvas"
   }
 }

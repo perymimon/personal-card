@@ -2855,12 +2855,16 @@ _html2canvas.Renderer.Canvas = function(options) {
       if (typeof options.elements[0] === "object" && options.elements[0].nodeName !== "BODY") {
         // crop image to the bounds of selected (single) element
         bounds = _html2canvas.Util.Bounds(options.elements[0]);
+        bounds.width *= options.zoom;
+        bounds.height *= options.zoom;
+        bounds.left *= options.zoom;
+        bounds.top *= options.zoom;
         newCanvas = document.createElement('canvas');
-        newCanvas.width = Math.ceil(bounds.width * options.zoom);
-        newCanvas.height = Math.ceil(bounds.height * options.zoom);
+        newCanvas.width = Math.ceil(bounds.width );
+        newCanvas.height = Math.ceil(bounds.height );
         ctx = newCanvas.getContext("2d");
 
-        ctx.drawImage(canvas, bounds.left*options.zoom, bounds.top*options.zoom, bounds.width*options.zoom, bounds.height * options.zoom, 0, 0, bounds.width *options.zoom, bounds.height * options.zoom);
+        ctx.drawImage(canvas, bounds.left, bounds.top, bounds.width, bounds.height, 0, 0, bounds.width , bounds.height );
         canvas = null;
         return newCanvas;
       }
