@@ -14,8 +14,13 @@
     background-color: #3c3c3c;
     width: 100%;
     cursor: pointer;
+    text-overflow: clip;
+    white-space: nowrap;
 }
-
+.GUI-label-image span{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 .GUI-label-image:hover{
     background: #3c3c3c;
 }

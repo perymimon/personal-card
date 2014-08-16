@@ -13,30 +13,41 @@
         <h5>
             contact information
         </h5>
-        <img class="qr-code" src="img/qcode.png" alt=""/>
-        <k><!--<img src="img/galaxy%20s3%20logo.png" />--> phone</k><v>{{ person.phone }}</v><br>
-        <k><!--<img src="img/Gmail_logo.jpg" />-->email</k><v><img src="img/gmail_logo.png" class="logo" style="width: 0.29cm;height: 0.23cm;margin-right: 0.1cm"/>{{ person.email }}</v><br>
-        <!--<k></k><img src="img/Facebook-Messenger-Logo1.jpg" alt=""/><v>pery.mimon@facebook.com</v><br>-->
-        <k>account</k><v><img src="img/fb-logo.jpg" class="logo" style="width: 0.3cm;height: 0.3cm;margin-right: 0.1cm"/>{{ person.accounts }}</v><br>
-        <k></k><v ><img src="img/Instagram_logo.png" class="logo"/>
-        <img src="img/LinkedIn_logo.png" class="logo"/>
-        <img src="img/twitter-logo-1.jpg"  class="logo" />
-        <img src="img/github_logo.png" class="logo" alt=""/>
+        <img class="qr-code" ng-src="{{ images.qrCode }}" alt=""/>
+        <k>phone</k><v>{{ person.phone }}</v><br>
+        <k>email</k><v><img src="{{ images.iconEmail }}" class="logo" style="width: 0.29cm;height: 0.23cm;margin-right: 0.1cm"/>{{ person.email }}</v><br>
+        <k>account</k><v><img ng-src="{{ images.iconFB }}" class="logo" style="width: 0.3cm;height: 0.3cm;margin-right: 0.1cm"/>{{ person.accounts }}</v><br>
+        <k></k><v ><img src="{{ images.iconInstagram }}" class="logo"/>
+        <img ng-src="{{ images.iconLinkdin }}" class="logo" alt=""/>
+        <img ng-src="{{ images.iconTwitter }}"  class="logo" />
+        <img ng-src="{{ images.iconGitHub }}" class="logo" alt=""/>
         <!--<img src="img/twitter-logo.png"  class="logo" />-->
-        <img src="img/plus-badge.png"  class="logo" />
+        <img ng-src="{{ images.iconPlus }}"  class="logo" />
     </v>
     </div>
     <div class="family clearFix">
         <h5>family</h5>
         <div class="person">
-            <div class="imgCover"><img src="img/eddie.jpg" /></div>
+            <div class="imgCover"><img ng-src="{{ images.moreImage0 }}" /></div>
             <!--<span >Eddie Mimon</span>-->
         </div>
         <div class="person">
-            <div class="imgCover"><img src="img/shelly.jpg" /></div>
+            <div class="imgCover"><img ng-src="{{ images.moreImage1 }}" /></div>
             <!--<span >Shelly woods</span>-->
         </div>
-        <!--<div style="clear: both;"></div>-->
+        <div class="person">
+            <div class="imgCover"><img ng-src="{{ images.moreImage2 }}" /></div>
+            <!--<span >Shelly woods</span>-->
+        </div>
+        <div class="person">
+            <div class="imgCover"><img ng-src="{{ images.moreImage3 }}" /></div>
+            <!--<span >Shelly woods</span>-->
+        </div>
+        <div class="person">
+            <div class="imgCover"><img ng-src="{{ images.moreImage5 }}" /></div>
+            <!--<span >Shelly woods</span>-->
+        </div>
+
     </div>
     <div class="logos">
 

@@ -21,5 +21,25 @@ angular.module('dataModule', [])
 
     })
     .value('images',{
-        iconLiving:'img/lives.icon.png'
+        me:'img/me.png',
+        iconLiving:'img/lives.icon.png',
+        iconWork:'img/work.icon.png',
+        iconStudy:'img/study.icon.png',
+        iconBirthday:'img/birethday_icon.png',
+        iconDegree:'img/dgree-logo.png',
+        iconEmail:'img/gmail_logo.png',
+        iconFB:'img/fb-logo.jpg',
+        iconInstagram:'img/Instagram_logo.png',
+        iconLinkdin:'img/LinkedIn_logo.png',
+        iconTwitter:'img/twitter-logo-1.jpg',
+        iconGitHub:'img/github_logo.png',
+        iconPlus:'img/plus-badge.png',
+        cover:'img/971792_10151600465809591_1233828151_n.jpg',
+        qrCode:'img/qcode.png',
+        moreImage0:'img/eddie.jpg',
+        moreImage1:'img/shelly.jpg',
+        moreImage2:'',
+        moreImage3:'',
+        moreImage4:''
+
     });

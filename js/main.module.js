@@ -62,10 +62,6 @@ angular.module('MainModule', ['ngRoute','dataModule'])
                 controller.onChange( callback );
             }
             gui.remember(obj);
-
-            obj.nuber = 23;
-            gui.add(obj, 'nuber', -50, 50 );
-
         }
     })
     .factory('downloadDomAsImage',function(){

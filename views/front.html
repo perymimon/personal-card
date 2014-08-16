@@ -1,40 +1,40 @@
 <div class="card front">
     <div class="cover">
-        <img class="bg-cover" src="img/971792_10151600465809591_1233828151_n.jpg" alt=""/>
+        <img class="bg-cover" ng-src="{{ images.cover }}" alt=""/>
         <div class="name">
             {{ person.name }}
         </div>
         <div class="profileImage">
-            <div class="image"></div>
+            <img ng-src="{{ images.me }}" class="image"/>
         </div>
     </div>
     <div class="about">
         <h5 >About
             <div class="living">
-                <img ng-src="{{ images.iconLiving }}">
+                <img ng-src="{{ images.iconLiving }}" style="width: 18px; margin-left: -1px;">
                 <d>Lives in</d> <v>{{ person.city }}, {{ person.country }}</v>
             </div>
         </h5>
         <div class="details">
             <div class="row">
                 <div class="detail">
-                    <img src="img/work.icon.png" />
+                    <img ng-src="{{ images.iconWork }}" />
                     <df>{{ person.profession }}</df> <vf>{{person.workingCompany}}</vf><br>
                     <span class="past">Past: {{ person.pastCompany }}</span>
                 </div>
                 <div class="detail">
-                    <img src="img/study.icon.png" />
+                    <img ng-src="{{ images.iconStudy }}" />
                     <df>Studied at</df> <vf>{{ person.studied }}</vf><br>
                     <span class="past">Past: {{ person.pastStudied }}</span>
                 </div>
             </div>
             <div class="row">
                 <div class="detail">
-                    <img src="img/birethday_icon.png" style="top:-2px;" />
+                    <img ng-src="{{ images.iconBirthday }}" style="top:-2px;" />
                     <df>Birthday</df> <vf>{{ person.birthday }}</vf><br>
                 </div>
                 <div class="detail">
-                    <img src="img/dgree-logo.png" style="width: 18px;margin-left: -1px;" />
+                    <img ng-src="{{ images.iconDegree }}" style="width: 18px;margin-left: -1px;" />
                     <df>{{ person.degree }} in</df> <vf>{{ person.fieldTitle }}</vf><br>
                 </div>
             </div>
