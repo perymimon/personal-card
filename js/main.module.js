@@ -89,18 +89,18 @@ angular.module('MainModule', ['ngRoute','dataModule'])
         return function ( element, fileName  ) {
             html2canvas( element,{
                 allowTaint:false,
-                height:500,
-                width:1200,
+                zoom:10,
+//                height:500,
+//                width:1200,
                 letterRendering:true,
                 useCORS:true,
-                svgRendering:true,
                 onrendered:function( canvas ){
                     var dataurl = canvas.toDataURL();
                     var blob = dataURItoBlob( dataurl );
                     var objectURL = URL.createObjectURL(  blob  );
                     var linkEl = document.createElement('a');
                     linkEl.href = objectURL;
-                    linkEl.setAttribute('download','front');
+                    linkEl.setAttribute('download',fileName);
                     linkEl.click();
                 }
             })
@@ -120,7 +120,7 @@ angular.module('MainModule', ['ngRoute','dataModule'])
         } );
         $scope.screenshot = function(){
             downloadDomAsImage( document.getElementsByClassName('front'),'front' );
-            downloadDomAsImage( document.getElementsByClassName('back'),'front' );
+            downloadDomAsImage( document.getElementsByClassName('back'),'back' );
 
         }
 
