@@ -23,6 +23,8 @@
   "dependencies": {
     "angular": "~1.2.22",
     "dat.gui": "*",
-    "angular-route": "1.2.15"
+    "dat-gui":"perymimon/dat.gui",
+    "angular-route": "1.2.15",
+    "html2canvas": "~0.4.1"
   }
 }

@@ -1,5 +1,6 @@
-<div class="card">
+<div class="card front">
     <div class="cover">
+        <img class="bg-cover" src="img/971792_10151600465809591_1233828151_n.jpg" alt=""/>
         <div class="name">
             {{ person.name }}
         </div>
@@ -10,19 +11,19 @@
     <div class="about">
         <h5 >About
             <div class="living">
-                <img src="https://fbstatic-a.akamaihd.net/rsrc.php/v2/yI/r/jg7lQrpjdKk.png">
+                <img ng-src="{{ images.iconLiving }}">
                 <d>Lives in</d> <v>{{ person.city }}, {{ person.country }}</v>
             </div>
         </h5>
         <div class="details">
             <div class="row">
                 <div class="detail">
-                    <img src="https://fbstatic-a.akamaihd.net/rsrc.php/v2/yw/r/3LFVMmKZeUX.png" />
+                    <img src="img/work.icon.png" />
                     <df>{{ person.profession }}</df> <vf>{{person.workingCompany}}</vf><br>
                     <span class="past">Past: {{ person.pastCompany }}</span>
                 </div>
                 <div class="detail">
-                    <img src="https://fbstatic-a.akamaihd.net/rsrc.php/v2/yb/r/wKvDSXpnqkB.png" />
+                    <img src="img/study.icon.png" />
                     <df>Studied at</df> <vf>{{ person.studied }}</vf><br>
                     <span class="past">Past: {{ person.pastStudied }}</span>
                 </div>
