@@ -1,0 +1,386 @@
+.card{
+    padding: 2mm;
+    width: 9.1cm;
+    height: 5.1cm;
+    background-color: #E9EAED;
+    /*border: 1px solid black;*/
+    /*zoom: 7.5208913649025069637883008356546;*/
+}
+/*front*/
+
+.cover{
+    height: 6em;
+    /*background-image:url(../img/971792_10151600465809591_1233828151_n.jpg);*/
+    /*background-image:url(../img/2013-05-22%2019.36.39.jpg);*/
+    /*background-size: cover;*/
+    /*background-position: 0 -115px;*/
+    position: relative;
+    /*overflow: hidden;*/
+
+}
+.bg-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+.cover .profileImage{
+    background-color: white;
+    width: 80px;
+    height: 77px;
+    position: relative;
+    margin-left: 0.3cm;
+    top: 0.8cm;
+    -webkit-box-sizing: content-box;
+    padding: 0.4mm;
+
+}
+.cover .image{
+    height: 100%;
+    border: 0.2mm solid;
+    background-clip: content-box;
+}
+
+
+.cover .name{
+    bottom: 0.3cm;
+    left: 3.2cm;
+}
+
+h5{
+    background-color: rgb(246, 247, 248);
+    background-origin: padding-box;
+    background-size: auto;
+    border-bottom: rgb(233, 234, 237) solid 1px;
+    display: block;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    text-align: left;
+    color: rgb(106, 116, 128);
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    padding-top: 2px;
+    margin: 0;
+    vertical-align: top;
+    padding-left: 1mm;
+
+}
+.about h5{
+    padding-left: 2.8cm;
+}
+d,v{
+    display: inline;
+    vertical-align: text-top;
+}
+
+df{
+
+    color: rgb(106, 116, 128);
+    display: inline;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+}
+vf{
+    color: rgb(59, 89, 152);
+    display: inline;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    height: auto;
+    list-style-type: none;
+    text-align: left;
+    text-decoration: none;
+    width: auto;
+}
+.past{
+    color: rgb(173, 179, 188);
+    direction: ltr;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 9px;
+    height: 10px;
+    margin-top: 2px;
+}
+.name{
+    color: rgb(255, 255, 255);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: 30px;
+    text-align: left;
+    text-decoration: none;
+    text-rendering: optimizelegibility;
+    text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 3px;
+    width: auto;
+    position: absolute;
+
+}
+.about{
+    background-color: white;
+    height: 6.2em;
+}
+.about
+
+.details .row{
+    border-bottom-color: rgb(233, 234, 237);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    list-style: none;
+}
+.row:after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+.detail{
+    display: block;
+    float: left;
+    padding: 0.1cm;
+    line-height: 8px;
+    width: 10.1em;
+}
+.detail img{
+    float: left;
+    margin-right: 0.3em;
+    width: 16px;
+    position: relative;
+}
+.detail .past{
+    font-size: 8px;
+}
+.living{
+    display: inline;
+    margin-left: 0.7cm;
+    line-height: 8px;
+    text-transform: capitalize;
+
+}
+
+/*back*/
+.header{
+    background-color: #3b5998;
+    border-bottom: 1px solid #133783;
+    position: relative;
+    z-index: 300;
+    -webkit-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .52);
+    height: 3mm;
+    top: -2mm;
+    margin-left: -2mm;
+    margin-right: -2mm;
+}
+h1{
+    color: #37404e;
+    font: bold 16px 'Helvetica Neue', Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif;
+    padding-left: 0;
+}
+
+.add-friend{
+    -webkit-background-size: auto;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px 0px;
+    background-color: rgb(105, 167, 78);
+    background-image: url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yf/r/1eGg7s9j1fo.png);
+    background-position: -352px -446px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom-color: rgb(44, 81, 21);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(59, 110, 34);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(59, 110, 34);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(59, 110, 34);
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px 0px;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    direction: ltr;
+    display: inline-block;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    height: 19px;
+    line-height: 16px;
+    margin-left: 0px;
+    padding-bottom: 2px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 2px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 85px;
+    margin-right: 0.15cm;
+    margin-top: 0.1cm;
+}
+.add-friend span{
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    height: 19px;
+    letter-spacing: normal;
+    line-height: 16px;
+    text-align: center;
+    text-indent: 0px;
+    text-shadow: none;
+    text-transform: none;
+    white-space: nowrap;
+    width: 69px;
+    word-spacing: 0px;
+
+}
+i{
+    -webkit-background-size: auto;
+    background-image: url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yY/r/87d23zirFW5.png);
+    background-position: -100px -530px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    direction: ltr;
+    display: inline-block;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: bold;
+    height: 14px;
+    line-height: 16px;
+    margin-right: 5px;
+    margin-top: 4px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: center;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 11px;
+}
+.float-right{
+    float: right;
+}
+.float-left{
+    float:left;
+}
+k{
+    border-collapse: collapse;
+    color: rgb(137, 145, 156);
+    direction: ltr;
+    display: table-cell;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    height: 16px;
+    line-height: 15px;
+    padding-bottom: 4px;
+    padding-left: 0px;
+    padding-right: 8px;
+    /*padding-top: 4px;*/
+    text-align: left;
+    vertical-align: top;
+    min-width: 5em;
+    word-wrap: break-word;
+    display: inline-block;
+    padding-left: 1mm;
+}
+v{
+    display: inline;
+    border-collapse: collapse;
+    color: rgb(59, 89, 152);
+    display: inline;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 11px;
+    height: auto;
+    line-height: 17px;
+    list-style-type: none;
+    text-align: left;
+    width: auto;
+    vertical-align: top;
+    padding-left: 0.1cm;
+    text-decoration: none;
+}
+
+.right-column{
+    /*width: 3cm;*/
+}
+.qr-code{
+    margin-top: 2mm;
+    width: 3cm !important;
+    float: right;
+    clear: right;
+    margin-right: 0.1cm;
+}
+.contact{
+    background-color: white;
+}
+.contact img{
+    width: 0.4cm;
+    margin-left: -0.4cm;
+}
+.contact img.logo{
+    width: 0.5cm;
+    margin-left: 0;
+}
+
+
+.family{
+    background-color: #ffffff;
+}
+.family .person{
+    float: left;
+    position: relative;
+    margin-right: 1px;
+    margin-top: 4px;
+    margin-left: 2px;
+}
+.family .person .imgCover{
+    padding: 1px;
+    background-color: rgba(0,0,0,0.3);
+    display: inline-block;
+
+}
+
+.family .person img{
+    border: 2px solid #fff;
+    width: 1cm;
+    display: block;
+}
+.family .person span{
+    color: #3b5998;
+    font-weight: bold;
+    font-size: 13px;
+}
+.logos{
+    clear: right;
+    margin-top: 2px;
+    float: right;;
+}
+.logos img{
+    float: right;
+    width: .70cm;
+    opacity: 0.3;
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+.clearFix:after{
+    content: "";
+    display: block;
+    clear: both;
+}

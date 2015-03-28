@@ -9,15 +9,21 @@ todo:
         V make GUI link to model
 
     phase2 - proof of concept
-    V    take all html insert it to canvas
-     V    make canvas download to like image file
-
+        V take all html insert it to canvas
+        V make canvas download to like image file
          or insert all html to svg file and download it
-        reformat code to service
+        V reformat code to service
     phase 2:
-        insert all photo to template
+        V insert all photo to template
     phase 3:
-        upload to github
+        V upload to github
+    phase 4:
+        view stylesheet for nice editing
+    phase 6:
+        create dynamic QRcode
+    phase 5:
+        create array image for more on me
+
 
 
 

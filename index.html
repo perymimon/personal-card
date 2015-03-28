@@ -5,30 +5,52 @@
     <title>personal card</title>
 
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
     <!--<script src="lib/dat.gui/dat.gui.min.js"></script>-->
     <script src="lib/dat-gui/build/dat.gui.js"></script>
-
-
-    <link rel="stylesheet"  href="css/app.css">
+    <link rel="stylesheet" href="css/app.css"/>
 
 </head>
 <body ng-controller="mainCtrl">
-    <!--<ng-view></ng-view>-->
+    <div class="side-menu">
+        <div class="title-menu">
+            cards
+        </div>
 
-    <div ng-include="'views/front.html'"></div>
-    <br/>
-    <div ng-include="'views/back.html'"></div>
+        <a ui-sref="template({index:1})"> facebook style 1</a>
+
+    </div>
+    <button class="btn-screenshoot"
+            ng-class="{loading:inProgress}"
+            ng-click="screenshot()">screenshot</button>
+
+
+    <div class="main-content">
+        <div class="live">
+            <div  ui-view="front" ></div>
+            <br/>
+            <div ui-view="back" ></div>
+        </div>
+        <div class="preivew">
+            <div><img ng-src="{{imageUrlFront}}"/></div>
+            <br/>
+            <div><img ng-src="{{imageUrlBack}}" /></div>
+        </div>
+
+
+    </div>
+
+    <div class="navigation">
+        <a  ui-sref="template({index:$stateParams.index*1-1})"> ⇦ prev </a>
+        <a  ui-sref="template({index:$stateParams.index*1+1})"> next ⇨ </a>
+    </div>
 
     <script src="js/main.module.js"></script>
     <script src="js/data.module.js"></script>
     <script src="js/html2canvas.js"></script>
-    
-    <a ng-href="#front">front</a>
-    <a ng-href="#back">back</a>
-    <br/>
 
-    <button ng-click="screenshot()">screenshot</button>
 
+
+    <link rel="stylesheet"  ng-href="{{'views/'+$stateParams.index+'/card.css'}}">
 </body>
 </html>

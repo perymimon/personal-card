@@ -1,7 +1,7 @@
 /**
  * Created by pery on 14/08/14.
  */
-angular.module('MainModule', ['ngRoute','dataModule'])
+angular.module('MainModule', ['ui.router','dataModule'])
 
     .config(function ( $compileProvider ) {
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|blob):/);
@@ -9,18 +9,25 @@ angular.module('MainModule', ['ngRoute','dataModule'])
         // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
     })
 
-    .config( function ($routeProvider, $locationProvider) {
-        $routeProvider
-            .when('/front', {
-                templateUrl: 'views/front.html'
+    .config( function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('template',{
+                url:'/template/:index',
+                views:{
+                    front:{
+                        templateUrl:function($stateParams){
+                            return 'views/'+ $stateParams.index +'/front.html';
+                        }
+                    },
+                    back:{
+                        templateUrl:function($stateParams){
+                            return 'views/'+$stateParams.index+'/back.html';
+                        }
+                    }
+                }
             })
-            .when('/back',{
-                templateUrl:'views/back.html'
-            })
-            .otherwise({
-                redirectTo: '/front'
-            });
-
+          ;
+        $urlRouterProvider.otherwise("/template/1");
 //    // configure html5 to get links working on jsfiddle
 //    $locationProvider.html5Mode(true);
 
@@ -64,7 +71,7 @@ angular.module('MainModule', ['ngRoute','dataModule'])
             gui.remember(obj);
         }
     })
-    .factory('downloadDomAsImage',function(){
+    .factory('downloadDomAsImage',function($q){
 
         function dataURItoBlob(dataURI) {
             // convert base64/URLEncoded data component to raw binary data held in a string
@@ -87,41 +94,101 @@ angular.module('MainModule', ['ngRoute','dataModule'])
         }
 
         return function ( element, fileName  ) {
-            html2canvas( element,{
-                allowTaint:false,
-                zoom:10,
+            return $q(function (resolve, reject) {
+                html2canvas( element,{
+                    allowTaint:false,
+                    zoom:10,
 //                height:500,
 //                width:1200,
-                letterRendering:true,
-                useCORS:true,
-                onrendered:function( canvas ){
-                    var dataurl = canvas.toDataURL();
-                    var blob = dataURItoBlob( dataurl );
-                    var objectURL = URL.createObjectURL(  blob  );
-                    var linkEl = document.createElement('a');
-                    linkEl.href = objectURL;
-                    linkEl.setAttribute('download',fileName);
-                    linkEl.click();
-                }
+                    letterRendering:true,
+                    useCORS:true,
+                    onrendered:function( canvas ){
+                        var dataurl = canvas.toDataURL();
+                        var blob = dataURItoBlob( dataurl );
+                        var objectURL = URL.createObjectURL(  blob  );
+                        var linkEl = document.createElement('a');
+                        linkEl.href = objectURL;
+                        linkEl.setAttribute('download',fileName);
+                        linkEl.click();
+                        resolve(objectURL);
+
+                    }
+                })
             })
+
         }
     })
-    .controller('mainCtrl', function ( $scope, person, personSchema, images, datGUI, downloadDomAsImage) {
+    .directive('img', function () {
+        return function($scope,element,attr){
+            var imageType = /^image\//;
+            element[0].addEventListener("drop", drop, false);
+            element[0].addEventListener("dragover", dragover, false);
+
+            function dragover(evt){
+                evt.stopPropagation();
+                evt.preventDefault();
+                evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a
+            }
+
+            function drop (evt) {
+                evt.stopPropagation();
+                evt.preventDefault();
+                var files = evt.dataTransfer.files;
+
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
+                    if (!imageType.test(file.type)) {
+                        continue;
+                    }
+                    element[0].file = file;
+                    element[0].src = URL.createObjectURL(file);
+                    return;
+                    //URL.revokeObjectURL(objectURL);
+                }
+                /*maybe drop is link of  img*/
+                var elm  =angular.element(evt.dataTransfer.getData('text/html'));
+                var src = elm[0].src || elm.find('img')[0].src;
+                element[0].src = src;
+            }
+        }
+    })
+    .controller('mainCtrl', function ( $scope, person, personSchema, images, datGUI, downloadDomAsImage, $stateParams, $q,$document) {
         $scope.person = person;
+        $scope.$stateParams = $stateParams;
+        $scope.images = images;
+        $scope.state = {};
+        $scope.state.inProgress = false;
         datGUI(person, personSchema, function(value) {
             // Fires on every change, drag, keypress, etc.
             $scope.$digest();
         } );
-
-        $scope.images = images;
-        datGUI(images, {}, function(value) {
-            // Fires on every change, drag, keypress, etc.
-            $scope.$digest();
-        } );
+        //datGUI(images, {}, function(value) {
+        //    // Fires on every change, drag, keypress, etc.
+        //    $scope.$digest();
+        //});
         $scope.screenshot = function(){
-            downloadDomAsImage( document.getElementsByClassName('front'),'front' );
-            downloadDomAsImage( document.getElementsByClassName('back'),'back' );
+            $scope.state.inProgress = true;
 
-        }
+            var proms1 = downloadDomAsImage( document.getElementsByClassName('front'),'front' );
+            var proms2 = downloadDomAsImage( document.getElementsByClassName('back'),'back' );
+
+            $q.all([proms1, proms2]).then(function (data) {
+                var urlImage1 = data[0];
+                var urlImage2 = data[1];
+                $scope.imageUrlFront = urlImage1;
+                $scope.imageUrlBack = urlImage2;
+                $scope.state.inProgress = false;
+            })
+        };
+        //document.addEventListener("dragenter", function (evt) {
+        //    evt.preventDefault();
+        //}, false);
+        //document.addEventListener("dragover", function (evt) {
+        //    evt.preventDefault();
+        //}, false);
+        document.addEventListener("drop", function (evt) {
+            evt.preventDefault();
+        },false)
+
 
     });
